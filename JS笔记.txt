@@ -1,0 +1,19 @@
+对象创建new（）&Object.create（）原型继承创建对象  P134  不存在的时候要写
+    属性里面有1.空格 2.连字符 3.保留字  都要用字符串（即加引号）表示
+http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
+  p215foreach！好用法
+
+1.31 P215
+
+属性检测
+"x" in o/o.hasOwnProperty("x")/o.propertyIsEnumberable("x")/"x"!==undefined
+
+JavaScript代码创建的属性通常都是可以枚举的
+ECMAScript5中使用的特殊方法改变属性的可枚举性
+
+
+2.2 P142
+
+
+parseInt()  //将字符串型转换为整型
+parseFloat()  //将字符串型转换为浮点型

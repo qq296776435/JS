@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #000;margin: 0 auto;display: block;">
+    对不起，你的浏览器不支持canvas，快放弃它吧
+</canvas>
+<script>
+    window.onload=function() {
+        var canvas = document.getElementById("canvas");
+        canvas.width = 800;
+        canvas.height = 800;
+        var context = canvas.getContext("2d");
+        var radii=10;
+        var i=setInterval(draw,200);
+        function draw(){
+            context.fillStyle="red";
+            context.beginPath();
+            context.lineWidth = 1;
+            context.strokeStyle = "#000";
+            context.arc(400, 400, radii, 0, 2 * Math.PI, true);
+            radii+=10;
+            context.stroke();
+            context.closePath();
+            context.fill();
+            if (radii>=200)
+            {
+                clearInterval(i);
+            }
+        }
+    }
+</script>
+</body>
+</html>

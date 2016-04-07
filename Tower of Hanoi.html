@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <script type="text/javascript">
+        function Hanoi(n,BTN,MTN,FTN)/*begintowername,middletowername,finaltowername */
+        {
+            if (n==1)
+            Paction(1,BTN,FTN);
+            else
+            {
+               Hanoi(n-1,BTN,FTN,MTN)
+               Paction(n,BTN,FTN)
+               Hanoi(n-1,MTN,BTN,FTN)    
+            }
+        }
+        function Paction(n,from,to)
+        {
+            document.write("the No."+n+" disk is moved from "+from+" to "+to+"<br/>")
+        }</script>
+    </head>
+    <body>
+    输入盘子的个数：<input type="text" id="num1"/><br/>
+    
+    <input type="button" onclick="Hanoi(document.getElementById('num1').value,'X','Y','Z')" value="显示移动步骤"/>
+        
+    </body>
+</html>

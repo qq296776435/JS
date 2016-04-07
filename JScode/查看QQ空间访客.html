@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no"/> 
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta name="author" content="MicLon" />
+<title>»ñÈ¡×î½ü·Ã¿ÍÐÅÏ¢</title>
+<style type="text/css">
+
+
+#result{ font-size:12px; font-family:microsoft yahei; line-height:22px;margin-top:20px;}
+#qq{color:#666;}</style>
+</head>
+
+<body>
+   <input type="text" id="qq" value="ÇëÊäÈëÒª²éÑ¯µÄQQºÅ" onfocus="if(value=='ÇëÊäÈëÒª²éÑ¯µÄQQºÅ'){value=''}" onblur="if(value==''){value='ÇëÊäÈëÒª²éÑ¯µÄQQºÅ'}" />
+   <input type="button" id="button" value="²é¿´×î½ü·Ã¿Í" />
+<div id="result"></div>
+
+<script src="http://www.oschina.net/js/2012/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		$('#button').click(function(){
+			$('#result').empty();
+			var url = "http://m.qzone.com/mqz_get_visitor?res_mode=0&res_uin="+$('#qq').val()+"&offset=0&count=10&page=1&format=json&t=1393471689181&sid=";
+		  $.getJSON(url,function(datas){ 
+			$.each(datas.data.list,function(n){
+				$('#result').append("êÇ³Æ : "+datas.data.list[n].nick+" = qq: "+datas.data.list[n].uin+"<br/>");
+			});
+		  });
+
+		});
+	});
+</script>
+
+
+</body>
+</html>
